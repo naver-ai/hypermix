@@ -66,7 +66,9 @@ class Runner:
 def parse_args():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--datasets", nargs="+", required=True, default=[])
+    parser.add_argument("--datasets", nargs="+", required=True, 
+                        choices=["gpt3mix/rt20", "gpt3mix/sst2"],
+                        default=[])
 
     group = parser.add_argument_group("Experiment Options")
     group.add_argument("--num-trials", type=int, default=1)
